@@ -22,7 +22,7 @@ And you can run it via:
 
     polyserve -p 3000
 
-Once running, you can checkout demo at `http://localhost:3000/components/nuxeo-audit-metrics/demo`.
+Once running, you can checkout demo at `http://localhost:3000/components/nuxeo-audit-data/demo`.
 
 ## About Nuxeo
 
