@@ -1,0 +1,27 @@
+{
+  "name": "nuxeo-audit-data",
+  "version": "0.0.1",
+  "authors": [
+    "Joshua Fletcher <jfletcher@nuxeo.com>",
+    "Nelson Silva <nsilva@nuxeo.com>"
+  ],
+  "description": "A set of elements providing Nuxeo audit metrics data.",
+  "keywords": [
+    "web-component",
+    "polymer",
+    "nuxeo",
+    "audit",
+    "metrics"
+  ],
+  "license": "LGPL",
+  "homepage": "https://github.com/jfletcher/nuxeo-audit-data/",
+  "ignore": [
+    "/.*",
+    "/test/"
+  ],
+  "dependencies": {
+    "polymer": "~1.2.1",
+    "nuxeo-elements": "nuxeo/nuxeo-elements#~0.2.3",
+    "nuxeo-dataviz-elements": "nuxeo/nuxeo-dataviz-elements#~0.2.1"
+  }
+}
