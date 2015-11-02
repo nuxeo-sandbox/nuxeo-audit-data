@@ -69,7 +69,7 @@ Contributors:
 
     <h2>Top Downloads</h2>
 
-    <nuxeo-audit-data event="download" grouped-by="docPath" group-limit="[[limit]]" start-date="[[startDate]]" end-date="[[endDate]]" data="{{downloads}}">
+    <nuxeo-audit-data event="download" grouped-by="docPath" group-limit="5" start-date="[[startDate]]" end-date="[[endDate]]" data="{{downloads}}">
     </nuxeo-audit-data>
 
     <table>
@@ -87,7 +87,6 @@ Contributors:
 
   </template>
   <script>
-    var limit = 5;
     var t = document.querySelector('template');
     var currentDate = moment();
     t.endDate = currentDate.format("YYYY-MM-DD");
