@@ -30,6 +30,7 @@ Example:
 
     <nuxeo-audit-data event="eventId"
                             grouped-by="field"
+                            group-limit=[[groupLimit]]
                             with-ranges='{
                               "duration":[
                                 {"key":"quick", "to":"1500"},
@@ -88,14 +89,6 @@ If all the aggregation levels are configured it will produce a query like:
       },
 
       event: String,
-
-      /**
-       * the name of the task to filter by
-       */
-      task: {
-        type: String,
-        value: ''
-      },
 
       /**
        * Date field to use

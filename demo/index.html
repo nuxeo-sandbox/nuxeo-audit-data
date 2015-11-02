@@ -26,6 +26,7 @@ Contributors:
 
   <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/moment/min/moment-with-locales.js"></script>
 
   <link rel="import" href="../bower_components/nuxeo-elements/nuxeo-connection.html">
   <link rel="import" href="../nuxeo-audit-data.html">
@@ -66,9 +67,9 @@ Contributors:
     <input type="date" value="{{startDate::change}}">
     <input type="date" value="{{endDate::change}}">
 
-    <h2>Downloads</h2>
+    <h2>Top Downloads</h2>
 
-    <nuxeo-audit-data event="download" grouped-by="docPath" start-date="[[startDate]]" end-date="[[endDate]]" data="{{downloads}}">
+    <nuxeo-audit-data event="download" grouped-by="docPath" group-limit="[[limit]]" start-date="[[startDate]]" end-date="[[endDate]]" data="{{downloads}}">
     </nuxeo-audit-data>
 
     <table>
@@ -86,10 +87,11 @@ Contributors:
 
   </template>
   <script>
+    var limit = 5;
     var t = document.querySelector('template');
-
-    t.startDate = "2015-09-01";
-    t.endDate = "2015-10-30";
+    var currentDate = moment();
+    t.endDate = currentDate.format("YYYY-MM-DD");
+    t.startDate = currentDate.subtract(6, 'months').format("YYYY-MM-DD");
   </script>
 </body>
 
