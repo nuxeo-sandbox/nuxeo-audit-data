@@ -69,8 +69,7 @@ Contributors:
 
     <h2>Top Downloads</h2>
 
-    <nuxeo-audit-data event="download" grouped-by="docPath" group-limit="5" start-date="[[startDate]]" end-date="[[endDate]]" data="{{downloads}}">
-    </nuxeo-audit-data>
+    <nuxeo-audit-data event-id="download" where='[{"term": {"downloadReason": "download"}},{"term": {"blobXPath": "blobholder:0"}}]' grouped-by="docPath" group-limit="10" start-date="[[startDate]]" end-date="[[endDate]]" data="{{downloads}}"></nuxeo-audit-data>
 
     <table>
       <tr>

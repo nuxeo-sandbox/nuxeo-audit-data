@@ -28,8 +28,9 @@ A query is a configurable nested aggregation with 3 aggregation levels:
 
 Example:
 
-    <nuxeo-audit-data event="eventId"
-                            grouped-by="field"
+    <nuxeo-audit-data event-id="eventId"
+                           where='[{"range": {"dc:created": {"gte": startDate, "lte": endDate}}}]' array of terms
+                           grouped-by="field"
                             group-limit=[[groupLimit]]
                             with-ranges='{
                               "duration":[
@@ -83,16 +84,27 @@ If all the aggregation levels are configured it will produce a query like:
 
     properties: {
 
+      /**
+       * the name of the index
+       */
+      // @override
       index: {
         type: String,
         value: 'audit'
       },
 
-      event: String,
+      /**
+       * the name of the event to filter by
+       */
+      eventId: {
+        type: String,
+        value: ''
+      },
 
       /**
        * Date field to use
        **/
+      // @override
       dateField: {
         type: String,
         value: 'eventDate'
@@ -101,21 +113,24 @@ If all the aggregation levels are configured it will produce a query like:
     },
 
     observers: [
-      '_query(event, startDate, endDate)',
+      '_query(eventId, where, startDate, endDate)',
       '_aggregates(groupedBy, withRanges, withDateIntervals, metrics, metricsOperator, startDate, endDate)'
     ],
 
     _query: function () {
-      var event = this.event;
+      var eventId = this.eventId;
 
       var terms = [
         {
           term: {
-            "eventId": event
+            "eventId": eventId
           }
         }
       ];
 
+      this.where.forEach(function (term) {
+        terms.push(term);
+      });
 
       if (this._dateRange) {
         terms.push(this._dateRange);
