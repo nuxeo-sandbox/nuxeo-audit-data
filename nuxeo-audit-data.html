@@ -20,27 +20,27 @@ Contributors:
 <!--
 An element providing data from the audit index.
 
-A query is a configurable nested aggregation with 3 aggregation levels:
+The possible values for `event-id` are available as contributions to the `event` extension point of the `org.nuxeo.ecm.platform.audit.service.NXAuditEventsService` service.
+
+A query supports additional terms:
+
+- `where`: array of additional terms for the `must` clause
+
+A query is a configurable nested aggregation with 2 aggregation levels:
 
 - `grouped-by`: top level term aggregations (comma-separated values)
-- `with-*`: nested multi-bucket aggregation (with-ranges | with-date-intervals)
 - `metrics`: leaf single-value metrics aggregation (max, min, avg, sum)
 
 Example:
 
     <nuxeo-audit-data event-id="eventId"
-                           where='[{"range": {"dc:created": {"gte": startDate, "lte": endDate}}}]' array of terms
-                           grouped-by="field"
-                            group-limit=[[groupLimit]]
-                            with-ranges='{
-                              "duration":[
-                                {"key":"quick", "to":"1500"},
-                                {"key":"slow", "from":"1500"}
-                              ]}'
-                            metrics="sum(amount)"
-                            start-date="[[startDate]]"
-                            end-date="[[endDate]]"
-                            data="{{data}}">
+                      where='[{"term": {"downloadReason": "download"}},{"term": {"blobXPath": "blobholder:0"}}]'
+                      grouped-by="field"
+                      group-limit=[[groupLimit]]
+                      metrics="sum(amount)"
+                      start-date="[[startDate]]"
+                      end-date="[[endDate]]"
+                      data="{{data}}">
     </nuxeo-audit-data>
 
 If all the aggregation levels are configured it will produce a query like:
