@@ -32,7 +32,7 @@ Contributors:
   <link rel="import" href="../nuxeo-audit-data.html">
   <link rel="import" href="../bower_components/nuxeo-elements/nuxeo-document.html">
 
-  <link rel="import" href="nuxeo-document-file.html">
+  <link rel="import" href="nuxeo-document-property.html">
 
   <style>
     table {
@@ -79,12 +79,12 @@ Contributors:
         <th>File</th>
         <th>Count</th>
       </tr>
-      <template is="dom-repeat" items="[[downloads]]" as="entry">
+      <template is="dom-repeat" items="[[downloads]]" as="downloadedDoc">
         <tr>
           <td>
-            <nuxeo-document-file doc-id="[[entry.key]]"></nuxeo-document-file>
+            <nuxeo-document-property doc-id="[[downloadedDoc.key]]" property-name="file:content" sub-property-name="name"></nuxeo-document-property>
           </td>
-          <td>[[entry.value]]</td>
+          <td>[[downloadedDoc.value]]</td>
         </tr>
       </template>
     </table>
