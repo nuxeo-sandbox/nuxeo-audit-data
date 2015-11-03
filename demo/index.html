@@ -30,6 +30,9 @@ Contributors:
 
   <link rel="import" href="../bower_components/nuxeo-elements/nuxeo-connection.html">
   <link rel="import" href="../nuxeo-audit-data.html">
+  <link rel="import" href="../bower_components/nuxeo-elements/nuxeo-document.html">
+
+  <link rel="import" href="nuxeo-document-file.html">
 
   <style>
     table {
@@ -69,7 +72,7 @@ Contributors:
 
     <h2>Top Downloads</h2>
 
-    <nuxeo-audit-data event-id="download" where='[{"term": {"downloadReason": "download"}},{"term": {"blobXPath": "blobholder:0"}}]' grouped-by="docPath" group-limit="10" start-date="[[startDate]]" end-date="[[endDate]]" data="{{downloads}}"></nuxeo-audit-data>
+    <nuxeo-audit-data event-id="download" where='[{"term": {"downloadReason": "download"}},{"term": {"blobXPath": "blobholder:0"}}]' grouped-by="docUUID" group-limit="10" start-date="[[startDate]]" end-date="[[endDate]]" data="{{downloads}}"></nuxeo-audit-data>
 
     <table>
       <tr>
@@ -78,7 +81,9 @@ Contributors:
       </tr>
       <template is="dom-repeat" items="[[downloads]]" as="entry">
         <tr>
-          <td>[[entry.key]]</td>
+          <td>
+            <nuxeo-document-file doc-id="[[entry.key]]"></nuxeo-document-file>
+          </td>
           <td>[[entry.value]]</td>
         </tr>
       </template>
