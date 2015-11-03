@@ -28,7 +28,7 @@ Contributors:
   <script src="../../moment/min/moment-with-locales.js"></script>
 
   <link rel="import" href="../../nuxeo-elements/nuxeo-connection.html">
-  <link rel="import" href="../../nuxeo-document-property/nuxeo-document-property.html">
+  <link rel="import" href="../../nuxeo-elements/nuxeo-document.html">
 
   <link rel="import" href="../nuxeo-audit-data.html">
 
@@ -80,7 +80,8 @@ Contributors:
       <template is="dom-repeat" items="[[downloads]]" as="downloadedDoc">
         <tr>
           <td>
-            <nuxeo-document-property doc-id="[[downloadedDoc.key]]" property-name="file:content" sub-property-name="name"></nuxeo-document-property>
+            <nuxeo-document auto doc-id="[[downloadedDoc.key]]" response="{{downloadedDoc.instance}}"></nuxeo-document>
+            <span>[[downloadedDoc.instance.properties.file:content.name]]</span>
           </td>
           <td>[[downloadedDoc.value]]</td>
         </tr>
