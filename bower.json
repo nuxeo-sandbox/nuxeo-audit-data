@@ -1,6 +1,6 @@
 {
   "name": "nuxeo-audit-data",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "authors": [
     "Joshua Fletcher <jfletcher@nuxeo.com>",
     "Nelson Silva <nsilva@nuxeo.com>"
