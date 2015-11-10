@@ -4,7 +4,7 @@ A Polymer data element backed by the Nuxeo Audit log.
 
 # Requirements
 
-Install Node.js (I use Homebrew)
+Install Node.js (I use [Homebrew](http://brew.sh/))
 
 Element dependencies are managed via [Bower](http://bower.io/). You can install that via:
 
