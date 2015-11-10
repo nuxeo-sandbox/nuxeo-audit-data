@@ -2,7 +2,9 @@
 
 A Polymer data element backed by the Nuxeo Audit log.
 
-# Dependencies
+# Requirements
+
+Install Node.js (I use Homebrew)
 
 Element dependencies are managed via [Bower](http://bower.io/). You can install that via:
 
@@ -12,7 +14,11 @@ Then, go ahead and download the element's dependencies:
 
     bower install
 
-# Quickstart
+We recommend that you use [Polyserve](https://github.com/PolymerLabs/polyserve), which you can install via:
+
+    npm install -g polyserve
+
+# Usage
 
 A sample application is included that lists the top 10 downloaded files in a Nuxeo application.
 
@@ -23,10 +29,6 @@ Enable CORS in your Nuxeo application.  Example CORS for polyserve:
             <pattern>/nuxeo/.*</pattern>
         </corsConfig>
     </extension>
-
-We recommend that you use [Polyserve](https://github.com/PolymerLabs/polyserve), which you can install via:
-
-    npm install -g polyserve
 
 And you can run it via:
 
