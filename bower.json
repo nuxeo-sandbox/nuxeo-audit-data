@@ -1,6 +1,6 @@
 {
   "name": "nuxeo-audit-data",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "Joshua Fletcher <jfletcher@nuxeo.com>",
     "Nelson Silva <nsilva@nuxeo.com>"
@@ -14,7 +14,7 @@
     "metrics"
   ],
   "license": "LGPL",
-  "homepage": "https://github.com/jfletcher/nuxeo-audit-data/",
+  "homepage": "https://github.com/nuxeo-sandbox/nuxeo-audit-data/",
   "ignore": [
     "/.*",
     "/test/"
