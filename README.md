@@ -32,7 +32,7 @@ And you can run it via:
 
     polyserve -p 3000
 
-Once running, you can check out the example at `http://localhost:3000/components/nuxeo-audit-data/demo`.
+Once running, you can check out the example at [http://localhost:3000/components/nuxeo-audit-data/demo](http://localhost:3000/components/nuxeo-audit-data/demo).
 
 # Licensing
 
